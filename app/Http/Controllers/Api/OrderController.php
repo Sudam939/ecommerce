@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Auth;
 class OrderController extends Controller
 {
 
+    public function order_history()
+    {
+        $orders = Order::where('user_id',Auth::user()->id)->first();
+        return OrderResource::collection($orders);
+    }
+
     public function post_order(Request $request)
     {
         $order = new Order();

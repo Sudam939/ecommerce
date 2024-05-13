@@ -28,6 +28,7 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::get('/logout',[AuthController::class,'logout']);
 
     Route::post('/order',[OrderController::class,'post_order']);
+    Route::post('/order-history',[OrderController::class,'order_history']);
 
     Route::get('/get_cart',[CartController::class,'get_cart']);
     Route::post('/add_cart',[CartController::class,'add_cart']);
