@@ -21,7 +21,7 @@ class OrderController extends Controller
         $order->status = "pending";
         $order->save();
 
-        foreach ($request->orderLines as $item) {
+        foreach ($request->orderDescriptions as $item) {
             $orderLine = new OrderLine();
             $orderLine->order_id = $order->id;
             $orderLine->product_id = $item['product_id'];
